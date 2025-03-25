@@ -17,8 +17,8 @@ body {
 }
 
 .preview-container {
-    width: 100%;
-    max-width: 1600px;
+    width: calc(100% - 250px); /* Ajuste la largeur du contenu principal */
+    margin-left: 250px; /* Compense la largeur de la sidebar */
     height: 100vh;
     display: flex;
     background-color: white;
@@ -33,7 +33,9 @@ body {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; /* Assure que les écritures restent en haut */
+    position: fixed; /* Rend la sidebar statique */
+    height: 100vh; /* Assure que la sidebar prend toute la hauteur de la page */
 }
 
 .sidebar-nav {
