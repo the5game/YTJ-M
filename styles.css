@@ -91,3 +91,22 @@ body {
     border-radius: 5px;
     margin-top: 15px;
 }
+
+/* Nouveaux styles pour les vignettes */
+.thumbnail-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.thumbnail {
+    width: 30%; /* Ajustez selon vos besoins */
+    height: auto;
+    border-radius: 5px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.thumbnail:hover {
+    transform: scale(1.05);
+}
