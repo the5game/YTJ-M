@@ -17,8 +17,7 @@ body {
 }
 
 .preview-container {
-    width: calc(100% - 250px); /* Ajuste la largeur du contenu principal */
-    margin-left: 250px; /* Compense la largeur de la sidebar */
+    width: 100%; /* Utilise toute la largeur disponible */
     height: 100vh;
     display: flex;
     background-color: white;
@@ -36,6 +35,7 @@ body {
     justify-content: flex-start; /* Assure que les écritures restent en haut */
     position: fixed; /* Rend la sidebar statique */
     height: 100vh; /* Assure que la sidebar prend toute la hauteur de la page */
+    left: 0; /* Positionne la sidebar à gauche */
 }
 
 .sidebar-nav {
@@ -64,6 +64,7 @@ body {
     overflow-y: auto;
     display: flex;
     flex-direction: column;
+    margin-left: 250px; /* Compense la largeur de la sidebar */
 }
 
 .page-title {
