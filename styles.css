@@ -202,4 +202,7 @@ body {
 }
 
 .social-grid-item:hover {
-    transform
+    transform: scale(1.05);
+}
+
+.social-grid-item
