@@ -56,7 +56,7 @@ body {
 }
 
 .sidebar-nav a {
-    color: black; /* Change la couleur du texte en noir */
+    color: white; /* Retour à la couleur blanche pour un meilleur contraste */
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -216,7 +216,7 @@ body {
     color: white;
 }
 
-/* Ajout de styles responsifs */
+/* Responsive Styles */
 @media screen and (max-width: 1200px) {
     .social-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -236,15 +236,21 @@ body {
 
     .sidebar .menu-toggle {
         display: block;
-        position: absolute;
+        position: fixed; /* Changed to fixed */
         top: 15px;
-        right: -50px;
+        right: 15px; /* Adjusted for better positioning */
         z-index: 1001;
     }
 
     .content {
         margin-left: 0;
         padding: 15px;
+        padding-top: 60px; /* Added padding to prevent content overlap */
+    }
+
+    .page-title {
+        margin-bottom: 20px; /* Reduced bottom margin */
+        font-size: 2rem; /* Slightly smaller font size */
     }
 
     .card-container, .social-grid {
