@@ -92,7 +92,7 @@ body {
     margin-top: 15px;
 }
 
-/* Nouveaux styles pour les vignettes */
+/* Styles pour les vignettes */
 .thumbnail-container {
     display: flex;
     justify-content: space-between;
@@ -100,7 +100,7 @@ body {
 }
 
 .thumbnail {
-    width: 30%; /* Ajustez selon vos besoins */
+    width: 30%;
     height: auto;
     border-radius: 5px;
     object-fit: cover;
@@ -109,4 +109,23 @@ body {
 
 .thumbnail:hover {
     transform: scale(1.05);
+}
+
+/* Nouveaux styles pour les boîtes de texte */
+.text-box {
+    background-color: rgba(255,255,255,0.3);
+    border-radius: 10px;
+    padding: 15px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.text-box:hover {
+    background-color: rgba(255,255,255,0.4);
+}
+
+.text-box p {
+    margin: 0;
+    color: white;
+    line-height: 1.6;
 }
