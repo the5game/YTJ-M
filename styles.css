@@ -8,44 +8,38 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     line-height: 1.6;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .preview-container {
-    display: flex;
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    max-width: 1600px;
+    height: 100vh;
+    display: flex;
     background-color: white;
     box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    border-radius: 15px;
     overflow: hidden;
-    flex-direction: column;
-}
-
-@media (min-width: 768px) {
-    .preview-container {
-        flex-direction: row;
-        min-height: 100vh;
-    }
 }
 
 .sidebar {
+    width: 250px;
     background: linear-gradient(135deg, #8A4FFF, #4B0082);
     color: white;
     padding: 20px;
-    width: 100%;
-}
-
-@media (min-width: 768px) {
-    .sidebar {
-        width: 250px;
-    }
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .sidebar-nav {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
 }
 
 .sidebar-nav a {
@@ -65,48 +59,35 @@ body {
     flex-grow: 1;
     padding: 30px;
     background: linear-gradient(135deg, #FF69B4, #87CEFA);
-    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .page-title {
     color: white;
     text-align: center;
     margin-bottom: 30px;
-    font-size: 2rem;
-}
-
-@media (min-width: 768px) {
-    .page-title {
-        font-size: 2.5rem;
-    }
+    font-size: 2.5rem;
 }
 
 .card-container {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     gap: 20px;
-}
-
-@media (min-width: 768px) {
-    .card-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
+    flex-wrap: wrap;
 }
 
 .card {
     background-color: rgba(255,255,255,0.2);
     border-radius: 10px;
     padding: 20px;
-    width: 100%;
+    width: calc(50% - 10px);
     color: white;
     transition: transform 0.3s;
-}
-
-@media (min-width: 768px) {
-    .card {
-        width: 45%;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .card:hover {
@@ -117,19 +98,19 @@ body {
     margin-top: 0;
     color: white;
     text-align: center;
+    width: 100%;
 }
 
 .thumbnail-container {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
-    margin-bottom: 15px;
     gap: 10px;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 .thumbnail {
     width: calc(33.333% - 10px);
-    height: auto;
     border-radius: 5px;
     object-fit: cover;
     transition: transform 0.3s;
@@ -144,11 +125,7 @@ body {
     border-radius: 10px;
     padding: 15px;
     margin-top: 15px;
-    transition: background-color 0.3s;
-}
-
-.text-box:hover {
-    background-color: rgba(255,255,255,0.4);
+    width: 100%;
 }
 
 .text-box p {
@@ -172,6 +149,7 @@ body {
 
 .social-links {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 15px;
     margin-top: 20px;
@@ -182,8 +160,69 @@ body {
     font-size: 24px;
     text-decoration: none;
     transition: transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-links a:hover {
     transform: scale(1.2);
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+}
+
+.social-grid-item {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.social-grid-item:hover {
+    transform: scale(1.05);
+}
+
+.social-grid-item i {
+    font-size: 3rem;
+    margin-bottom: 10px;
+}
+
+.social-grid-item h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 1200px) {
+    .preview-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .sidebar {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+    }
 }
