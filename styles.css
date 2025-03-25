@@ -216,7 +216,7 @@ body {
     color: white;
 }
 
-/* Ajout de styles responsifs */
+/* Responsive Styles */
 @media screen and (max-width: 1200px) {
     .social-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -227,6 +227,9 @@ body {
     .sidebar {
         transform: translateX(-100%);
         position: fixed;
+        top: 0;
+        left: 0;
+        width: 250px;
         z-index: 1000;
     }
 
@@ -240,6 +243,11 @@ body {
         top: 15px;
         right: 15px;
         z-index: 1001;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
     }
 
     .content {
@@ -260,20 +268,5 @@ body {
 
     .card, .social-grid-item {
         width: 100%;
-    }
-}
-
-/* Nouvelle media query pour garder la sidebar visible sur les grands écrans */
-@media screen and (min-width: 769px) {
-    .sidebar {
-        transform: translateX(0) !important;
-    }
-
-    .content {
-        margin-left: 250px;
-    }
-
-    .sidebar .menu-toggle {
-        display: none !important;
     }
 }
