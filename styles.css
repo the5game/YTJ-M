@@ -56,7 +56,7 @@ body {
 }
 
 .sidebar-nav a {
-    color: white;
+    color: black; /* Change la couleur du texte en noir */
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -207,4 +207,28 @@ body {
 
 .social-grid-item i {
     font-size: 3rem;
-    margin-bottom:
+    margin-bottom: 10px;
+}
+
+.social-grid-item h3 {
+    color: white;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%); /* Cache la sidebar par défaut sur les petits écrans */
+    }
+
+    .sidebar .menu-toggle {
+        display: block; /* Affiche le bouton de menu sur les petits écrans */
+    }
+
+    .sidebar.active {
+        transform: translateX(0); /* Affiche la sidebar lorsqu'elle est active */
+    }
+
+    .content {
+        margin-left: 0; /* Supprime la marge gauche sur les petits écrans */
+    }
+}
