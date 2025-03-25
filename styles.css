@@ -56,7 +56,7 @@ body {
 }
 
 .sidebar-nav a {
-    color: white; /* Retour à la couleur blanche pour un meilleur contraste */
+    color: white; /* Changé pour un meilleur contraste */
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -216,7 +216,7 @@ body {
     color: white;
 }
 
-/* Responsive Styles */
+/* Ajout de styles responsifs */
 @media screen and (max-width: 1200px) {
     .social-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -236,21 +236,21 @@ body {
 
     .sidebar .menu-toggle {
         display: block;
-        position: fixed; /* Changed to fixed */
+        position: fixed;
         top: 15px;
-        right: 15px; /* Adjusted for better positioning */
+        right: 15px;
         z-index: 1001;
     }
 
     .content {
         margin-left: 0;
         padding: 15px;
-        padding-top: 60px; /* Added padding to prevent content overlap */
+        padding-top: 60px;
     }
 
     .page-title {
-        margin-bottom: 20px; /* Reduced bottom margin */
-        font-size: 2rem; /* Slightly smaller font size */
+        margin-bottom: 20px;
+        font-size: 2rem;
     }
 
     .card-container, .social-grid {
@@ -260,5 +260,20 @@ body {
 
     .card, .social-grid-item {
         width: 100%;
+    }
+}
+
+/* Nouvelle media query pour garder la sidebar visible sur les grands écrans */
+@media screen and (min-width: 769px) {
+    .sidebar {
+        transform: translateX(0) !important;
+    }
+
+    .content {
+        margin-left: 250px;
+    }
+
+    .sidebar .menu-toggle {
+        display: none !important;
     }
 }
