@@ -7,7 +7,7 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
-    line-height: 1.6;
+    line-height: 1.9;
     width: 100%;
     min-height: 100vh;
     margin: 0;
@@ -17,8 +17,8 @@ body {
 }
 
 .preview-container {
-    width: calc(100% - 250px); /* Ajuste la largeur du contenu principal */
-    margin-left: 250px; /* Compense la largeur de la sidebar */
+    width: calc(100% - 500px); /* Ajuste la largeur du contenu principal */
+    margin-left: -250px; /* Compense la largeur de la sidebar */
     height: 100vh;
     display: flex;
     background-color: white;
