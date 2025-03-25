@@ -205,4 +205,54 @@ body {
     transform: scale(1.05);
 }
 
-.social-grid-item
+.social-grid-item i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: white;
+}
+
+.social-grid-item h3 {
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* Ajout de styles responsifs */
+@media screen and (max-width: 1200px) {
+    .social-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        transform: translateX(-100%);
+        position: fixed;
+        z-index: 1000;
+    }
+
+    .sidebar.active {
+        transform: translateX(0);
+    }
+
+    .sidebar .menu-toggle {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: -50px;
+        z-index: 1001;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 15px;
+    }
+
+    .card-container, .social-grid {
+        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
+
+    .card, .social-grid-item {
+        width: 100%;
+    }
+}
