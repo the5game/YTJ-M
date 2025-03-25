@@ -35,7 +35,6 @@ body {
     flex-direction: column;
     justify-content: flex-start; /* Assure que les écritures restent en haut */
     position: fixed; /* Rend la sidebar statique */
-    height: 100vh; /* Assure que la sidebar prend toute la hauteur de la page */
 }
 
 .sidebar-nav {
