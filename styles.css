@@ -25,7 +25,7 @@ body {
     overflow: hidden;
 }
 
- {
+.sidebar {
     width: 250px;
     background: linear-gradient(135deg, #8A4FFF, #4B0082);
     color: white;
@@ -207,28 +207,4 @@ body {
 
 .social-grid-item i {
     font-size: 3rem;
-    margin-bottom: 10px;
-}
-
-.social-grid-item h3 {
-    color: white;
-    margin-bottom: 10px;
-}
-
-@media (max-width: 768px) {
-    .sidebar {
-        transform: translateX(-100%); /* Cache la sidebar par défaut sur les petits écrans */
-    }
-
-    .sidebar .menu-toggle {
-        display: block; /* Affiche le bouton de menu sur les petits écrans */
-    }
-
-    .sidebar.active {
-        transform: translateX(0); /* Affiche la sidebar lorsqu'elle est active */
-    }
-
-    .content {
-        margin-left: 0; /* Supprime la marge gauche sur les petits écrans */
-    }
-}
+    margin-bottom:
