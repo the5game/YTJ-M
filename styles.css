@@ -1,7 +1,17 @@
+:root {
+    /* Color Variables */
+    --primary-gradient: linear-gradient(135deg, #8A4FFF, #4B0082);
+    --secondary-gradient: linear-gradient(135deg, #FF69B4, #87CEFA);
+    --white-transparent: rgba(255,255,255,0.2);
+    --text-color-light: #ffffff;
+    --text-color-dark: #333333;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    transition: all 0.3s ease;
 }
 
 body {
@@ -14,10 +24,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: var(--text-color-dark);
+}
+
+/* Focus Styles for Accessibility */
+a:focus, 
+button:focus, 
+input:focus, 
+textarea:focus {
+    outline: 3px solid rgba(255,255,255,0.5);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.3);
 }
 
 .preview-container {
-    width: 100%; /* Utilise toute la largeur disponible */
+    width: 100%;
     height: 100vh;
     display: flex;
     background-color: white;
@@ -27,24 +48,24 @@ body {
 
 .sidebar {
     width: 250px;
-    background: linear-gradient(135deg, #8A4FFF, #4B0082);
-    color: white;
+    background: var(--primary-gradient);
+    color: var(--text-color-light);
     padding: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Assure que les écritures restent en haut */
-    position: fixed; /* Rend la sidebar statique */
-    height: 100vh; /* Assure que la sidebar prend toute la hauteur de la page */
-    left: 0; /* Positionne la sidebar à gauche */
+    justify-content: flex-start;
+    position: fixed;
+    height: 100vh;
+    left: 0;
     transition: transform 0.3s ease;
     z-index: 1000;
 }
 
 .sidebar .menu-toggle {
-    display: none; /* Cache le bouton de menu par défaut */
+    display: none;
     background: none;
     border: none;
-    color: white;
+    color: var(--text-color-light);
     font-size: 2rem;
     cursor: pointer;
     margin-bottom: 20px;
@@ -61,7 +82,7 @@ body {
 }
 
 .sidebar-nav a {
-    color: white; /* Changé pour un meilleur contraste */
+    color: var(--text-color-light);
     text-decoration: none;
     padding: 10px 15px;
     border-radius: 5px;
@@ -69,22 +90,23 @@ body {
     text-align: center;
 }
 
-.sidebar-nav a:hover, .sidebar-nav a.active {
+.sidebar-nav a:hover, 
+.sidebar-nav a.active {
     background-color: rgba(255,255,255,0.2);
 }
 
 .content {
     flex-grow: 1;
     padding: 30px;
-    background: linear-gradient(135deg, #FF69B4, #87CEFA);
+    background: var(--secondary-gradient);
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    margin-left: 250px; /* Compense la largeur de la sidebar */
+    margin-left: 250px;
 }
 
 .page-title {
-    color: white;
+    color: var(--text-color-light);
     text-align: center;
     margin-bottom: 30px;
     font-size: 2.5rem;
@@ -98,24 +120,26 @@ body {
 }
 
 .card {
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--white-transparent);
     border-radius: 10px;
     padding: 20px;
     width: calc(50% - 10px);
-    color: white;
-    transition: transform 0.3s;
+    color: var(--text-color-light);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     align-items: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
 .card h2 {
     margin-top: 0;
-    color: white;
+    color: var(--text-color-light);
     text-align: center;
     width: 100%;
 }
@@ -132,11 +156,12 @@ body {
     width: calc(33.333% - 10px);
     border-radius: 5px;
     object-fit: cover;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .thumbnail:hover {
     transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
 }
 
 .text-box {
@@ -149,7 +174,7 @@ body {
 
 .text-box p {
     margin: 0;
-    color: white;
+    color: var(--text-color-light);
     line-height: 1.6;
     text-align: center;
 }
@@ -158,12 +183,18 @@ body {
     display: block;
     text-align: center;
     background-color: rgba(255,255,255,0.3);
-    color: white;
+    color: var(--text-color-light);
     padding: 10px 15px;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 15px;
     width: 100%;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.card-btn:hover {
+    background-color: rgba(255,255,255,0.4);
+    transform: translateY(-3px);
 }
 
 .social-links {
@@ -175,10 +206,10 @@ body {
 }
 
 .social-links a {
-    color: white;
+    color: var(--text-color-light);
     font-size: 24px;
     text-decoration: none;
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -186,6 +217,7 @@ body {
 
 .social-links a:hover {
     transform: scale(1.2);
+    color: rgba(255,255,255,0.8);
 }
 
 .social-grid {
@@ -196,47 +228,48 @@ body {
 }
 
 .social-grid-item {
-    background-color: rgba(255,255,255,0.2);
+    background-color: var(--white-transparent);
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .social-grid-item:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0,0,0,0.15);
 }
 
 .social-grid-item i {
     font-size: 2rem;
     margin-bottom: 10px;
-    color: white;
+    color: var(--text-color-light);
 }
 
 .social-grid-item h3 {
     margin-bottom: 15px;
-    color: white;
+    color: var(--text-color-light);
 }
 
 /* Responsive Styles */
-/* Styles pour le menu hamburger et responsive */
 @media screen and (max-width: 768px) {
     .sidebar {
         width: 250px;
-        background: linear-gradient(135deg, #8A4FFF, #4B0082);
+        background: var(--primary-gradient);
         position: fixed;
         top: 0;
-        left: -250px; /* Caché par défaut */
+        left: -250px;
         height: 100%;
         z-index: 1000;
         transition: left 0.3s ease;
     }
 
     .sidebar.active {
-        left: 0; /* Apparaît à sa position normale */
+        left: 0;
     }
 
     .sidebar .menu-toggle {
@@ -247,7 +280,7 @@ body {
         z-index: 1100;
         background: none;
         border: none;
-        color: white;
+        color: var(--text-color-light);
         font-size: 2rem;
         cursor: pointer;
     }
@@ -267,7 +300,6 @@ body {
     }
 }
 
-/* Pour les écrans larges */
 @media screen and (min-width: 769px) {
     .sidebar .menu-toggle {
         display: none !important;
@@ -281,7 +313,6 @@ body {
         margin-left: 250px;
     }
 }
-/* Add these styles to your existing styles.css */
 
 /* Form Styles */
 #contact-form {
@@ -298,16 +329,23 @@ body {
 
 .form-group label {
     margin-bottom: 5px;
-    color: white;
+    color: var(--text-color-light);
 }
 
 .form-group input, 
 .form-group textarea {
     padding: 10px;
     border: 1px solid rgba(255,255,255,0.3);
-    background-color: rgba(255,255,255,0.2);
-    color: white;
+    background-color: var(--white-transparent);
+    color: var(--text-color-light);
     border-radius: 5px;
+    transition: box-shadow 0.3s, border-color 0.3s;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: rgba(255,255,255,0.5);
+    box-shadow: 0 0 0 3px rgba(138, 79, 255, 0.2);
 }
 
 .form-group textarea {
@@ -321,7 +359,6 @@ body {
     margin-bottom: 15px;
 }
 
-/* Responsive form adjustments */
 @media screen and (max-width: 768px) {
     .form-group input, 
     .form-group textarea {
