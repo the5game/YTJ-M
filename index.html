@@ -3,29 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan et Maryse</title>
+    <meta name="description" content="Jonathan et Maryse - Chaîne YouTube et réseaux sociaux. Découvrez notre contenu unique et passionnant !">
+    <meta name="keywords" content="Jonathan, Maryse, YouTube, réseaux sociaux, contenu créatif">
+    <meta name="author" content="Jonathan et Maryse">
+    <title>Jonathan et Maryse - Accueil</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="preview-container">
         <div class="sidebar">
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <nav class="sidebar-nav">
-                <a href="index.html" class="active">Accueil</a>
+            <button class="menu-toggle" aria-label="Toggle menu">☰</button>
+            <nav class="sidebar-nav" aria-label="Navigation principale">
+                <a href="index.html" class="active" aria-current="page">Accueil</a>
                 <a href="youtube.html">YouTube</a>
                 <a href="reseaux.html">Réseaux</a>
                 <a href="contact.html">Contact</a>
             </nav>
-            <div class="social-links">
-                <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-tiktok"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-snapchat"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-twitch"></i></a>
-                <a href="#" target="_blank"><i class="fab fa-discord"></i></a>
+            <div class="social-links" aria-label="Liens des réseaux sociaux">
+                <a href="#" target="_blank" rel="noopener" aria-label="YouTube">
+                    <i class="fab fa-youtube" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Instagram">
+                    <i class="fab fa-instagram" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="TikTok">
+                    <i class="fab fa-tiktok" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Twitter">
+                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Facebook">
+                    <i class="fab fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Snapchat">
+                    <i class="fab fa-snapchat" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Twitch">
+                    <i class="fab fa-twitch" aria-hidden="true"></i>
+                </a>
+                <a href="#" target="_blank" rel="noopener" aria-label="Discord">
+                    <i class="fab fa-discord" aria-hidden="true"></i>
+                </a>
             </div>
         </div>
         <div class="content">
@@ -34,9 +53,9 @@
                 <div class="card">
                     <h2>Projet Youtube 1</h2>
                     <div class="thumbnail-container">
-                        <img src="https://via.placeholder.com/300x200" alt="Projet 1" class="thumbnail">
-                        <img src="https://via.placeholder.com/300x200" alt="Projet 2" class="thumbnail">
-                        <img src="https://via.placeholder.com/300x200" alt="Projet 3" class="thumbnail">
+                        <img src="/api/placeholder/300/200" alt="Projet 1" class="thumbnail" loading="lazy">
+                        <img src="/api/placeholder/300/200" alt="Projet 2" class="thumbnail" loading="lazy">
+                        <img src="/api/placeholder/300/200" alt="Projet 3" class="thumbnail" loading="lazy">
                     </div>
                     <div class="text-box">
                         <p>Découvrez notre univers créatif à travers notre aventure Youtube. 
@@ -47,9 +66,9 @@
                 <div class="card">
                     <h2>À Venir</h2>
                     <div class="thumbnail-container">
-                        <img src="https://via.placeholder.com/300x200" alt="Contenu à venir 1" class="thumbnail">
-                        <img src="https://via.placeholder.com/300x200" alt="Contenu à venir 2" class="thumbnail">
-                        <img src="https://via.placeholder.com/300x200" alt="Contenu à venir 3" class="thumbnail">
+                        <img src="/api/placeholder/300/200" alt="Contenu à venir 1" class="thumbnail" loading="lazy">
+                        <img src="/api/placeholder/300/200" alt="Contenu à venir 2" class="thumbnail" loading="lazy">
+                        <img src="/api/placeholder/300/200" alt="Contenu à venir 3" class="thumbnail" loading="lazy">
                     </div>
                     <div class="text-box">
                         <p>Restez connectés pour des contenus exclusifs, des vidéos 
