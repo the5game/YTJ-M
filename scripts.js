@@ -1,48 +1,57 @@
+// Fonction pour basculer le menu
 function toggleMenu() {
     const sidebar = document.querySelector('.sidebar');
     const menuToggle = document.querySelector('.menu-toggle');
-    
-    sidebar.classList.toggle('active');
-    
-    // Changer l'icône du menu
-    if (sidebar.classList.contains('active')) {
-        menuToggle.innerHTML = '✕'; // Croix pour fermer
+
+    // Debug log
+    console.log('Toggle menu clicked');
+    console.log('Sidebar:', sidebar);
+    console.log('Menu toggle:', menuToggle);
+
+    if (sidebar && menuToggle) {
+        sidebar.classList.toggle('active');
+
+        // Changer l'icône
+        if (sidebar.classList.contains('active')) {
+            menuToggle.innerHTML = '✕';
+        } else {
+            menuToggle.innerHTML = '☰';
+        }
     } else {
-        menuToggle.innerHTML = '☰'; // Hamburger pour ouvrir
+        console.error('Impossible de trouver la sidebar ou le bouton de menu');
     }
 }
 
+// Événements pour fermer le menu
 document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
     const menuToggle = document.querySelector('.menu-toggle');
     const content = document.querySelector('.content');
-    const sidebar = document.querySelector('.sidebar');
-    
+
+    // Debug log
+    console.log('DOM loaded');
+    console.log('Sidebar:', sidebar);
+    console.log('Menu toggle:', menuToggle);
+    console.log('Content:', content);
+
     if (menuToggle) {
         menuToggle.addEventListener('click', toggleMenu);
     }
-    
+
+    // Fermer le menu si on clique en dehors
     if (content) {
         content.addEventListener('click', () => {
-            if (sidebar.classList.contains('active')) {
+            if (sidebar && sidebar.classList.contains('active')) {
                 sidebar.classList.remove('active');
-                menuToggle.innerHTML = '☰';
+                if (menuToggle) {
+                    menuToggle.innerHTML = '☰';
+                }
             }
         });
     }
 });
 
-// Écoute supplémentaire pour fermer le menu lors d'un clic en dehors
-document.addEventListener('click', (event) => {
-    const sidebar = document.querySelector('.sidebar');
-    const menuToggle = document.querySelector('.menu-toggle');
-    
-    if (
-        sidebar && 
-        sidebar.classList.contains('active') && 
-        !sidebar.contains(event.target) && 
-        event.target !== menuToggle
-    ) {
-        sidebar.classList.remove('active');
-        menuToggle.innerHTML = '☰';
-    }
+// Log des dimensions de l'écran pour débogage
+window.addEventListener('resize', () => {
+    console.log('Largeur de l\'écran:', window.innerWidth);
 });
