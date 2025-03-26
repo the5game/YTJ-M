@@ -61,3 +61,16 @@ function validateContactForm() {
     errorElement.textContent = '';
     return true;
 }
+document.addEventListener('DOMContentLoaded', () => {
+    // Sélectionne tous les liens externes
+    const externalLinks = document.querySelectorAll('a[href^="http"]');
+    
+    externalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            // Ouvre le lien dans un nouvel onglet
+            window.open(link.href, '_blank', 'noopener,noreferrer');
+            // Empêche le comportement par défaut du lien
+            e.preventDefault();
+        });
+    });
+});
