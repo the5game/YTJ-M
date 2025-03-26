@@ -26,6 +26,15 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => {
         console.log('Screen width:', window.innerWidth);
     });
+
+    // Open external links in new tab
+    const externalLinks = document.querySelectorAll('a[href^="http"]');
+    externalLinks.forEach(link => {
+        link.addEventListener('click', (e) => {
+            window.open(link.href, '_blank', 'noopener,noreferrer');
+            e.preventDefault();
+        });
+    });
 });
 
 function toggleMenu() {
@@ -41,36 +50,48 @@ function toggleMenu() {
     menuToggle.innerHTML = sidebar.classList.contains('active') ? '✕' : '☰';
 }
 
-// Add form validation for contact form (if implemented)
+// Form validation for contact form
 function validateContactForm() {
     const form = document.getElementById('contact-form');
+    const name = document.getElementById('name');
     const email = document.getElementById('email');
     const message = document.getElementById('message');
     const errorElement = document.getElementById('form-error');
 
+    // Reset previous error
+    errorElement.textContent = '';
+
+    // Name validation
+    if (name.value.trim().length < 2) {
+        errorElement.textContent = 'Veuillez entrer un nom valide.';
+        return false;
+    }
+
+    // Email validation
     if (!email.value.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
         errorElement.textContent = 'Veuillez entrer une adresse email valide.';
         return false;
     }
 
+    // Message validation
     if (message.value.trim().length < 10) {
         errorElement.textContent = 'Votre message est trop court.';
         return false;
     }
 
-    errorElement.textContent = '';
+    // Optional: You might want to add form submission logic here
+    alert('Formulaire soumis avec succès !');
     return true;
 }
+
+// Attach form validation to contact form if it exists
 document.addEventListener('DOMContentLoaded', () => {
-    // Sélectionne tous les liens externes
-    const externalLinks = document.querySelectorAll('a[href^="http"]');
-    
-    externalLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Ouvre le lien dans un nouvel onglet
-            window.open(link.href, '_blank', 'noopener,noreferrer');
-            // Empêche le comportement par défaut du lien
-            e.preventDefault();
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            if (!validateContactForm()) {
+                e.preventDefault();
+            }
         });
-    });
+    }
 });
