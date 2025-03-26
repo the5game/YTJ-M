@@ -222,24 +222,25 @@ body {
 }
 
 /* Responsive Styles */
+/* Styles pour le menu hamburger et responsive */
 @media screen and (max-width: 768px) {
     .sidebar {
-        transform: translateX(-100%);
+        width: 250px;
+        background: linear-gradient(135deg, #8A4FFF, #4B0082);
         position: fixed;
         top: 0;
-        left: 0;
-        width: 250px;
+        left: -250px; /* Caché par défaut */
         height: 100%;
         z-index: 1000;
-        transition: transform 0.3s ease;
+        transition: left 0.3s ease;
     }
 
     .sidebar.active {
-        transform: translateX(0);
+        left: 0; /* Apparaît à sa position normale */
     }
 
     .sidebar .menu-toggle {
-        display: block !important;  /* Force l'affichage */
+        display: block !important;
         position: fixed;
         top: 15px;
         right: 15px;
@@ -252,18 +253,13 @@ body {
     }
 
     .content {
-        margin-left: 0;
         width: 100%;
-    }
-
-    .page-title {
-        margin-bottom: 20px;
-        font-size: 2rem;
+        margin-left: 0;
+        padding: 15px;
     }
 
     .card-container, .social-grid {
         flex-direction: column;
-        grid-template-columns: 1fr;
     }
 
     .card, .social-grid-item {
@@ -271,9 +267,17 @@ body {
     }
 }
 
-/* Correction pour les grands écrans */
+/* Pour les écrans larges */
 @media screen and (min-width: 769px) {
     .sidebar .menu-toggle {
         display: none !important;
+    }
+
+    .sidebar {
+        left: 0;
+    }
+
+    .content {
+        margin-left: 250px;
     }
 }
