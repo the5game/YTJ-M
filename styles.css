@@ -365,3 +365,17 @@ textarea:focus {
         width: 100%;
     }
 }
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.nav-icon {
+    stroke: var(--text-color-light);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-nav a:hover .nav-icon {
+    transform: scale(1.1);
+}
